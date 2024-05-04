@@ -1,0 +1,60 @@
+wandb:
+  #in each experiment, change exp num and corresponding project name for experiment management
+  project: simplicityDA_exp1
+  exp_num: 1
+  tags: [bert]
+path:
+  #base (expnum=1x)
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_base_100.pickle
+
+  #+silver (expnum=2x)
+  ##m=1
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug1_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug2_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug3_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug4_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug5_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug6_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug7_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug8_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug9_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_m1aug10_100.pickle
+
+
+  #base (trial2, expnum=1x)
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_base_trial2_100.pickle
+
+  #+silver (trial2, expnum=2x)
+  ##m=1
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug1_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug2_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug3_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug4_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug5_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug6_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug7_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug8_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug9_100.pickle
+  #data_file_name: /workspace/siera/training/data/simplicityDA_nprm_v11_silver_filtered_trial2_m1aug10_100.pickle
+  
+#===================================================================================================================================
+  
+  checkpoint_path: checkpoints
+model:
+  n_classes: 2
+  dropout_rate: 0.2
+  max_token_len: 512
+  pooling_type: cls
+  added_feature_num: 0
+training:
+  pl_seed: 1
+  #test_size: 0.3
+  valid_size: 0.2
+  n_epochs: 100
+  batch_size: 16
+  learning_rate: 0.00005
+  n_gpus: 1
+
+callbacks:
+  patience: 15
+  patience_min_delta: 0
